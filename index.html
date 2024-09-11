@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Page</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            margin: 1rem;
+        }
+        .forgive-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .stay-mad-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">I’m really sorry chaitu...</h1>
+        <h1 class="mb-4">Lobbbbb you so muchhhhh .....</h1>
+        <p class="mb-4">Please choose one of the options below:</p>
+        <div id="buttons-container">
+            <button id="forgive-btn" class="btn forgive-btn">Forgive</button>
+            <button id="stay-mad-btn" class="btn stay-mad-btn">Stay Mad</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.getElementById('forgive-btn').addEventListener('click', function() {
+            alert('Let’s kiss now baby !');
+        });
+
+        document.getElementById('stay-mad-btn').addEventListener('click', function() {
+            var container = document.getElementById('buttons-container');
+            var forgiveBtn = document.getElementById('forgive-btn');
+            var stayMadBtn = document.getElementById('stay-mad-btn');
+            
+            // Check the current order and swap buttons
+            if (container.firstElementChild === forgiveBtn) {
+                container.appendChild(stayMadBtn);
+                container.appendChild(forgiveBtn);
+            } else {
+                container.appendChild(forgiveBtn);
+                container.appendChild(stayMadBtn);
+            }
+        });
+    </script>
+</body>
+</html>
